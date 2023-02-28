@@ -10,8 +10,7 @@ See [LICENSE.md](LICENSE.md) for licensing information.
 
 --------------------------------------------------------------------------------
 
-
-ExoG is a game engine being developed by Mia B. Regula (doing business as
+ExoG™ is a game engine being developed by Mia B. Regula (doing business as
 ExoReality™ Games). The intention is to create a basic game engine that supports
 continuous integration and delivery, both failfast and failsafe exception
 handling, the ECS programming model, and a node-based programming model built on
@@ -28,7 +27,8 @@ resource settings.
 ## Compiling
 
 ExoG is currently being developed as a Visual Studio 2022 solution using the
-C++20 standard. This will change as the required tooling gets built.
+C++20 standard. This will change as the required tooling (primarily the build
+system) gets put in place to support other IDEs.
 
 
 ## Current State
