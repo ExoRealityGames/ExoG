@@ -1,3 +1,8 @@
+# Developer Notes
+
+A place to temporarily put notes until more permanent documentation is created.
+
+
 ## Objects
 
 * Objects will have single inheritence from Object class
@@ -104,3 +109,228 @@
   application within that domain
 * Consequently, the same application class can be used in multiple contexts
   with different settings
+
+
+## Requirements and Testing Terms
+
+The terms used in specifying requirements and in testing can be a bit ambiguous.
+For the ExoG project, the following definitions are used. Some are project
+specific.
+
+
+### Terms for Specifying Requirements
+
+<div style="margin-left: 3em; text-indent: -1em">
+
+**feature** &mdash; a titled collection of related functional and non-functional
+requirements used to describe some aspect of the system
+
+<div style="text-indent: 0">
+
+*\*\* This definition is project specific. \*\**
+
+**Warning**: The term "feature" can be highly overloaded in general usage
+because it does not specify the level of detail being discussed and because
+features described in marketing can be different than those described in
+technical documents. Be very careful when ecountering this word to make sure
+that it is discussing a technical requirement according to the definition
+given here.
+
+</div>
+
+**user epic** &mdash; a titled collection of related user stories
+
+**user story** &mdash; Describes a user interaction with the system (possibly
+through another system or piece of code) in terms of the goal of that
+interaction
+
+<div style="text-indent: 0">
+
+Should use the form "So I can *\<reason for interaction>*, As a *\<description
+of user's role>*, I want to *\<what the user wants to be able to do>*". "So I
+can" might be replaced by a similar phrase such as "So as to be able to". User
+stories should avoid implementation details and describe what is done, not how.
+If the how is important, it should be added as a note outside of the main clause
+with an explanation of its level of significance and why it is significant.
+
+</div>
+
+**user scenario** (or just "scenario") &mdash; a description of how the system
+should behave as part of a user story
+
+<div style="text-indent: 0">
+
+Should use the form "Given *\<a set of initial conditions for the scenario>*,
+When *\<action performed by the user>*, Then *\<the system's response to that
+action>*". The "then" part of this clause should use the word "should" to
+describe the correct response (e.g., "the application should respond a
+warning"). User scenarios should avoid implementation details and describe what
+is done, not how. If the how is important, it should be added as a note outside
+of the main clause with an explanation of its level of significance and why it
+is significant.
+
+</div>
+
+**user example** &mdash; a synonym for user scenario
+
+<div style="text-indent: 0">
+
+The term "user scenario" is somewhat preferred to avoid confusion with examples
+produced for documentation.
+
+</div>
+
+**behavior** (alt. spelling "behaviour", but "behavior" is preferred) &mdash; A
+synonym for either user story or user scenario
+
+<div style="text-indent: 0">
+
+Use of this term is discouraged except as part of the terms "behavioral test",
+where it is preferred. It might also be used as part of the term "behavioral
+requirement", but in this case, either the term "user story" or "user scenario"
+should generally be used instead (which may require a rewording). The term
+"functional requirement" might also be used together with the term
+"non-functional requirement" when both are being discussed. In general, though,
+it is better to discuss correct "behaviors" as defined by user stories and
+scenarios than requirements.
+
+</div>
+
+**non-functional requirement** &mdash; a non-behavioral requirement of the
+system such as its speed and memory usage
+
+**functional requirement** &mdash; a behavioral requirement of the system
+
+<div style="text-indent: 0">
+
+Use of this term is highly discouraged in favor of the term "behavior" which is
+defined in user scenarios (as a part of user stories), except when used in a
+very broad context, particularly when used together with the term
+"non-functional requirement".
+
+</div>
+
+</div>
+
+
+### Terms for identifying the manner of testing
+
+<div style="margin-left: 3em; text-indent: -1em">
+
+**automated test** &mdash; tests that are executed automatically by the computer
+at various stages of the deployment cycle or at the request of a user
+
+**manual test** &mdash; tests that require users to interact with the system
+to perform the test
+
+<div style="text-indent: 0">
+
+Manual tests that require the user to perform a specific sequence of steps to
+check for a specific result should always be automated if they need to be
+executed repeatedly.
+
+</div>
+
+**exploratory test** &mdash; manual tests done without a fixed set of steps to
+explore some aspect of the systems behavior or the behavior as a whole
+
+<div style="text-indent: 0">
+
+These are generally done to ensure the behavior and the interface make sense.
+
+</div>
+
+</div>
+
+
+### Terms for identifying the stage in the deployment cycle
+
+<div style="margin-left: 3em; text-indent: -1em">
+
+**commit test** &mdash; tests executed to validate commits to the main branch
+
+**acceptance test** &mdash; tests executed after a commit to the main branch to
+validate the build meets all acceptance criteria
+
+**deployment test** &mdash; tests executed to verify a successful deployment of
+the source or binaries
+
+</div>
+
+
+### Terms for identifying the purpose of the test
+
+<div style="margin-left: 3em; text-indent: -1em">
+
+**unit test** &mdash; tests performed on a single unit of code
+
+<div style="text-indent: 0">
+
+These are usually done as commit tests.
+
+</div>
+
+**integration tests** &mdash; tests used to verify requirements involving
+multiple units of code
+
+<div style="text-indent: 0">
+
+These tests serve a variety of purposes at each stage of the deployment cycle.
+Note that most behavioral tests and non-functional tests are types of
+integration tests, but not all. The terms "behavioral test" and "non-functional
+test" are preferred when referring to such tests.
+
+</div>
+
+**behavioral test** &mdash; Tests used to verify system behavior as sepcified
+in user scenarios
+
+<div style="text-indent: 0">
+
+These are usually done as acceptance tests
+
+</div>
+
+**functional test** &mdash; A synonym for "behavioral test"
+
+<div style="text-indent: 0">
+
+The term "behavioral test" is strongly preferred
+
+</div>
+
+**non-functional test** &mdash; Tests used to verify non-functional requirements
+
+<div style="text-indent: 0">
+
+These are usually done as acceptance tests.
+
+</div>
+
+**code example** &mdash; A code example that serves both as documentation and a
+test
+
+<div style="text-indent: 0">
+
+These require special markup for extraction to the documentation.
+
+</div>
+
+</div>
+
+
+### Other terms used to describe tests
+
+<div style="margin-left: 3em; text-indent: -1em">
+
+**smoke test** &mdash; A test used to check for major problems and malfunctions
+as representative of the system's overall health
+
+<div style="text-indent: 0">
+
+These are usually integration tests done to verify deployment or before other
+tests in a suite to determine if it is even worth running the whole suite.
+
+</div>
+
+</div>
