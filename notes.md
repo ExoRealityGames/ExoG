@@ -3,6 +3,18 @@
 A place to temporarily put notes until more permanent documentation is created.
 
 
+## Building the Engine and Game
+
+* Games are C++ projects that include the engine (optionally including the
+  engine's graphical game editor).
+* The editor generates C++ code from blueprint instances that is added to the
+  C++ project.
+* Premake is used to set up the C++ build environment (optionally including a
+  project file for an IDE such as Visual Studio).
+* A pre-build script is used to autogenerate C++ code when the project is built.
+* The build environment selected in Premake is used to build the C++ code.
+
+
 ## Objects
 
 * Objects will have single inheritence from Object class
@@ -62,7 +74,7 @@ A place to temporarily put notes until more permanent documentation is created.
   the user method
 
 
-## Large Files
+## Large File Repository
 
 * Large files will be stored as links that are pulled in by the build system
 * The links are symbols to records within a data file that is stored in a
